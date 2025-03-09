@@ -11,6 +11,37 @@
 4. `Storage Management`
     - Creates backup archives, tracks versions, stores metadata, and verifies backups.
 
+## Folder Structure
+```bash
+goBack/
+├── cmd/                               // Contains the main entry point of the application
+│   └── main.go                        // Main entry point for the CLI application
+├── internal/                          // Internal packages for various functionalities
+│   ├── backup/                        // Backup-related functionalities
+│   │   ├── backup.go                  // Core backup functionality
+│   │   ├── incremental.go             // Incremental backup functionality
+│   │   ├── restore.go                 // Restore functionality
+│   │   └── version.go                 // Version tracking and reporting
+│   ├── cli/                           // Command-line interface functionalities
+│   │   ├── help.go                    // Help documentation
+│   │   ├── config.go                  // Configuration file handling
+│   │   └── progress.go                // Progress tracking and reporting
+│   ├── fs/                            // File system operations
+│   │   ├── traversal.go               // Directory traversal
+│   │   ├── metadata.go                // File metadata handling
+│   │   ├── change_detection.go        // Change detection
+│   │   ├── filtering.go               // File filtering and exclusion
+│   │   └── permissions.go             // Permission preservation
+│   └── storage/                       // Storage management
+│       ├── archive.go                 // Backup archive creation and extraction
+│       ├── metadata.go                // Metadata storage and retrieval
+│       ├── verification.go            // Backup verification
+│       └── cleanup.go                 // Cleanup of old backups
+├── config.yaml                        // Configuration file for the utility
+└── go.mod                             // Go module configuration
+
+```
+
 ## Installation 
 To install the `goBack`, you need to have Go installed on your system.
 
